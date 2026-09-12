@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tic Tac Toe</h1>
+      <nav aria-label="Site">
+        <a
+          href="https://github.com/ruchikamakkar01-creator"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        <a href="#game-board">Play</a>
+      </nav>
+    </header>
+
+    <main id="side">
+      <section id="pl1" class="player-card" aria-label="Player 1">
+        <img id="img1" src="./player1.png" alt="Player 1 avatar" />
+        <h2 id="h21" aria-live="polite"></h2>
+      </section>
+
+      <section id="game-board" aria-label="Game board">
+        <div id="board">
+          <div
+            class="cell"
+            id="0"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 1"
+          ></div>
+          <div
+            class="cell"
+            id="1"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 2"
+          ></div>
+          <div
+            class="cell"
+            id="2"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 3"
+          ></div>
+          <div
+            class="cell"
+            id="3"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 4"
+          ></div>
+          <div
+            class="cell"
+            id="4"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 5"
+          ></div>
+          <div
+            class="cell"
+            id="5"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 6"
+          ></div>
+          <div
+            class="cell"
+            id="6"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 7"
+          ></div>
+          <div
+            class="cell"
+            id="7"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 8"
+          ></div>
+          <div
+            class="cell"
+            id="8"
+            role="button"
+            tabindex="0"
+            aria-label="Cell 9"
+          ></div>
+        </div>
+        <button type="button" id="reset-btn">Reset</button>
+      </section>
+
+      <section id="pl2" class="player-card" aria-label="Player 2">
+        <img id="img2" src="./player2.png" alt="Player 2 avatar" />
+        <h2 id="h22" aria-live="polite"></h2>
+      </section>
+    </main>
+
+    <footer>
+      <p>DecodeLabs Full Stack Internship &mdash; Project 1</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap");
+
+/* ---- color nd all ---- */
+:root {
+  --mocha: #a5856f;
+  --mocha-dark: #8f7059;
+  --ethereal-blue: #a0d4e0;
+  --moonlit-grey: #f2f0ea;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--moonlit-grey);
+  font-family: var(--font-body);
+  color: var(--mocha-dark);
+}
+
+header {
+  padding: 1.5rem 1rem 0;
+}
+
+header h1 {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  color: var(--mocha);
+  margin: 0 0 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: var(--mocha);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---- grid layout ---- */
+#side {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "p1"
+    "board"
+    "p2";
+  justify-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+#pl1 {
+  grid-area: p1;
+}
+#game-board {
+  grid-area: board;
+}
+#pl2 {
+  grid-area: p2;
+}
+
+.player-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.player-card img {
+  width: clamp(100px, 24vw, 190px);
+  transition: transform 0.2s ease;
+}
+
+.player-card h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--ethereal-blue);
+  margin: 0;
+  min-height: 1.5em;
+}
+
+#game-board {
+  background-color: var(--ethereal-blue);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#board {
+  width: min(360px, 80vw);
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cell {
+  background-color: var(--moonlit-grey);
+  border: 3px solid var(--mocha);
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 8vw, 3rem);
+  font-weight: 700;
+  color: var(--mocha);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell:hover,
+.cell:focus-visible {
+  background-color: #e8e4da;
+  outline: 3px solid var(--mocha);
+  outline-offset: 2px;
+}
+
+button#reset-btn {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--mocha);
+  color: var(--moonlit-grey);
+}
+
+button#reset-btn:hover {
+  background-color: var(--mocha-dark);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--mocha);
+  padding: 1.5rem 1rem;
+}
+
+/* ---- players---- */
+@media (min-width: 768px) {
+  #side {
+    grid-template-columns: minmax(100px, 200px) minmax(300px, 450px) minmax(
+        100px,
+        200px
+      );
+    grid-template-areas: "p1 board p2";
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .player-card {
+    flex-direction: column;
+  }
+
+  #board {
+    width: min(420px, 40vw);
+  }
+}
+
+/* ---- responsive ---- */
+@media (min-width: 1024px) {
+  #side {
+    grid-template-columns: minmax(180px, 260px) minmax(300px, 450px) minmax(
+        180px,
+        260px
+      );
+    gap: 5rem;
+  }
+
+  .player-card img {
+    width: 220px;
+  }
+
+  #board {
+    width: 420px;
+  }
+}
